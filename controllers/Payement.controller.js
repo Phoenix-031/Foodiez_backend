@@ -15,10 +15,11 @@ const payementIntent = async(req,res) => {
                 enabled: true,
             }
         })
+        console.log(paymentIntent)
 
         messageCustom(res, OK, "Payment Intent Created", {
             error:false,
-            client_secret: paymentIntent.id
+            client_secret: paymentIntent.client_secret
         });
         
     } catch (err) {
