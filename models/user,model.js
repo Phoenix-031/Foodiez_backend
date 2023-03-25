@@ -45,6 +45,14 @@ const userSchema = new mongoose.Schema({
         type: Array,
         default: [],
     },
+    profile_pic:{
+        type: String,
+        default: ""
+    },
+    verified_email:{
+        type: Boolean,
+        default: false
+    }
 
 }, {timestamps: true});
 

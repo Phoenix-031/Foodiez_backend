@@ -58,7 +58,6 @@ app.get("/", (req, res) => {
     message(res, OK, "Welcome to the Official Foodiez API");
 });
 
-
 const payementRoutes = require('./routes/Payement.routes')
 
 app.use('/api/payement', payementRoutes)
