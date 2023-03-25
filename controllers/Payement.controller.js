@@ -11,7 +11,7 @@ const payementIntent = async(req,res) => {
 
         const ephermalKey = await stripe.ephemeralKeys.create(
             {customer: customer.id},
-            {stripe_version: '2020-08-27'}
+            {apiVersion: '2022-11-15'}
         )
         console.log(ephermalKey)
         const paymentIntent =await stripe.paymentIntents.create({
@@ -24,10 +24,10 @@ const payementIntent = async(req,res) => {
         })
         // console.log(paymentIntent)
 
-        messageCustom(res, OK, "Payment Intent Created", {
+            messageCustom(res, OK, "Payment Intent Created", {
             error:false,
             client_secret: paymentIntent.client_secret,
-            ephemeralKey: ephemeralKey.secret,
+            ephemeralKey: ephermalKey.secret,
             cusomer:customer.id
         });
         
