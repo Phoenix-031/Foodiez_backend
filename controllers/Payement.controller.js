@@ -13,7 +13,7 @@ const payementIntent = async(req,res) => {
             {customer: customer.id},
             {apiVersion: '2022-11-15'}
         )
-        console.log(ephermalKey)
+        // console.log(ephermalKey)
         const paymentIntent =await stripe.paymentIntents.create({
             amount,
             currency,
@@ -22,7 +22,7 @@ const payementIntent = async(req,res) => {
                 enabled: true,
             }
         })
-        // console.log(paymentIntent)
+        // console.log(paymentIntent.client_secret)
 
             messageCustom(res, OK, "Payment Intent Created", {
             error:false,
